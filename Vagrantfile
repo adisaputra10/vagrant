@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
 
-
+config.vm.provision "shell", inline: "apt update -y && apt install nginx -y"
   config.vm.define "master" do |master|
     master.vm.hostname = "master"
     master.vm.provision :shell, path: "sh.sh"
